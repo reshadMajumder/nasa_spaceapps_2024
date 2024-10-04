@@ -16,7 +16,7 @@
   }
   
   .card {
-    background-color: rgba(10, 8, 8, 0.295); /* Semi-transparent card background */
+    background-color: rgba(10, 8, 8, 0.373); /* Semi-transparent card background */
     border: none;
     border-radius: 50px;
     overflow: hidden;
@@ -42,10 +42,11 @@
     border-radius: 30px;
     padding: 10px 30px;
     transition: background-color 0.3s ease;
+    background-color: rgba(17, 24, 54, 0.749);
   }
   
   .btn-dark {
-    background-color: #191331b5;
+    background-color: #4f077ed7;
   }
   
   .btn:hover {

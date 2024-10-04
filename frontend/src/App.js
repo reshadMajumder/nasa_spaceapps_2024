@@ -11,7 +11,7 @@ import StreamingPlatforms from './Screens/Streaming';
 import Lab from './Screens/Lab';
 import Vr from './Screens/Vr';
 import ExploreExoplanets from './Screens/Explore';
-import spaceBackground from "./assets/images/bg.gif";
+import spaceBackground from "./assets/images/bg.jpg";
 
 
 function App() {
