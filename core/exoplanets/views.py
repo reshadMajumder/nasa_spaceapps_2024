@@ -13,18 +13,25 @@ CACHE_TTL = 60 * 10  # Cache timeout in seconds (e.g., 10 minutes)
 
 async def fetch_data():
     url = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&format=json"
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(timeout=40.0) as client:
         response = await client.get(url)
         response.raise_for_status()
         return response.json()
 
 def start_fetching():
     while True:
-        fetched_data = asyncio.run(fetch_data())
-        cache.set(CACHE_KEY, fetched_data, timeout=CACHE_TTL)
-        print("Data fetched and cached successfully.")
-        time.sleep(10)
-
+        try:
+            fetched_data = asyncio.run(fetch_data())
+            cache.set(CACHE_KEY, fetched_data, timeout=CACHE_TTL)
+            print("Data fetched and cached successfully.")
+        except httpx.HTTPStatusError as http_err:
+            print(f"HTTP error occurred: {http_err}")
+        except httpx.RequestError as req_err:
+            print(f"Request error occurred: {req_err}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+        finally:
+            time.sleep(10)  # Wait for 10 seconds before the next fetch attempt
 # Start the background thread to fetch data continuously
 thread = threading.Thread(target=start_fetching)
 thread.daemon = True
