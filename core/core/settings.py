@@ -149,8 +149,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     'https://slingringui-production.up.railway.app',
-    "https://nasaspaceapps2024-production-6dc8.up.railway.app",
-    "https://nasa-spaceapps-2024.vercel.app"
+    "https://nasaspaceapps2024-production-6dc8.up.railway.app"
 
 ]
 
