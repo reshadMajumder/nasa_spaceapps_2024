@@ -1,0 +1,26 @@
+.vrContainer {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 6.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid;
+    width: 0;
+    animation: typing 3.5s steps(40, end) infinite, blink 0.75s step-end infinite;
+    color:white
+  }
+  
+  @keyframes typing {
+    0% { width: 0; }
+    50% { width: 100%; } /* Full text shown */
+    100% { width: 0; } /* Text fully erased */
+  }
+  
+  @keyframes blink {
+    from { border-color: transparent; }
+    to { border-color: black; }
+  }
+  

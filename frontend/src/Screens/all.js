@@ -4,7 +4,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import B_URL from "../Services/Api";
 
-const HomePage = () => {
+const AllData = () => {
   const [exoplanets, setExoplanets] = useState([]);
 
   // Fetch exoplanet data from NASA API
@@ -16,7 +16,7 @@ const HomePage = () => {
           `${B_URL}/api/exoplanets/`
         );
         console.log("Fetched Exoplanets Data: ", response.data); // Debugging to ensure data is received
-        setExoplanets(response.data.slice(0, 10)); // Limit to first 10 exoplanets for demo purposes
+        setExoplanets(response.data.slice(0, 15)); // Limit to first 10 exoplanets for demo purposes
       } catch (error) {
         console.error("Error fetching exoplanets: ", error);
       }
@@ -30,7 +30,7 @@ const HomePage = () => {
       <div className="container">
         <div className="row">
           {exoplanets.length > 0 ? (
-            exoplanets.slice(0, 6).map((planet, index) => (
+            exoplanets.map((planet, index) => (
               <div
                 className="col-lg-4 col-md-4 col-sm-6 col-12 mb-4"
                 key={index}
@@ -44,9 +44,9 @@ const HomePage = () => {
                         "Unnamed Planet"}
                     </h5>
                     <ul style={{ listStyle: "disc", marginTop: 40 }}>
-                      <li style={{ marginBottom: 10 }}>
+                      <li style={{marginBottom:10}}>
                         <span style={{ fontWeight: "600" }}>Temperature:</span>
-                        <span style={{ fontSize: 14, marginLeft: 5 }}>
+                        <span style={{ fontSize: 14 ,marginLeft:5}}>
                           {planet.koi_teq ? `${planet.koi_teq} K` : "Unknown"}
                         </span>
                       </li>
@@ -55,7 +55,7 @@ const HomePage = () => {
                           {" "}
                           Orbital Period:
                         </span>
-                        <span style={{ fontSize: 14, marginLeft: 5 }}>
+                        <span style={{ fontSize: 14,marginLeft:5}}>
                           {planet.koi_period
                             ? `${planet.koi_period} days`
                             : "Unknown"}
@@ -68,7 +68,7 @@ const HomePage = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        marginTop: 40,
+                        marginTop:40
                       }}
                     >
                       <Link
@@ -88,22 +88,9 @@ const HomePage = () => {
             </div>
           )}
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginTop: 40,
-            marginBottom:40
-          }}
-        >
-          <Link to={`/all`} style={{backgroundColor:"black",color:"white",borderRadius:16,padding:16,textDecoration: "none",}}>
-            View More
-          </Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default HomePage;
+export default AllData;

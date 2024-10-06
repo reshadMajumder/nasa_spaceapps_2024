@@ -16,9 +16,9 @@
   }
   
   .card {
-    background-color: rgba(10, 8, 8, 0.373); /* Semi-transparent card background */
+    background-color: rgba(15, 23, 42, 0.8);
     border: none;
-    border-radius: 50px;
+    border-radius: 16px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
   }

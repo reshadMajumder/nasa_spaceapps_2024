@@ -3,9 +3,9 @@ import './nasaTv.css';
 
 function NasaTv({ url }) {
   return (
-    <div className="home-background">
-      <div className="container">
-        <div className="iframe-container">
+    <div style={{marginTop:50,marginBottom:50}}>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+        <div style={{width:"100%",height:550,borderRadius:16,overflow: "hidden"}}>
           <iframe
             src={url}
             width="100%"

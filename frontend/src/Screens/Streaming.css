@@ -1,14 +1,13 @@
 /* Container styling for the StreamingPlatforms component */
 .streaming-container {
-  padding: 10px;
   text-align: center;
 }
 
 /* Flex container to arrange NasaTv components in a row */
 .streaming-row {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap; 
+  justify-content: center;
 }
 
 
@@ -16,14 +15,14 @@
 /* Responsive adjustments */
 @media screen and (max-width: 1200px) {
   .iframe-container {
-    width: 45%; /* Shrinks the width when screen size is below 1200px */
+    width: 45%; 
     height: auto;
   }
 }
 
 @media screen and (max-width: 768px) {
   .iframe-container {
-    width: 100%; /* Takes full width for mobile screens */
+    width: 100%; 
     height: auto;
   }
 }

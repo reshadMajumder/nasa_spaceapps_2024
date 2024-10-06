@@ -9,12 +9,10 @@ body {
     align-items: flex-start;
     padding: 20px;
     gap: 40px;
-    padding-top: 100px; /* Adjust based on your navbar height */
-
+    padding-top: 100px;
+    height: 100vh;
   }
 
-  
-  /* Post form styling */
   .post-form {
     flex: 1;
     max-width: 40%;
