@@ -85,6 +85,7 @@ const HomePage = () => {
           ) : (
             <div className="col-12 text-center text-white">
               <h3>Loading Exoplanets...</h3>
+              <p style={{ fontSize: '0.9rem' }}>If it takes too long, please reload the page.</p>
             </div>
           )}
         </div>
